@@ -1,3 +1,4 @@
+import java.util.HashMap;
 /**
  * Class Room - a room in an adventure game.
  *
@@ -15,21 +16,39 @@
 public class Room 
 {
     private String description;
-    private Room northExit;
-    private Room southExit;
-    private Room eastExit;
-    private Room westExit;
-
+    private HashMap<String, Room> exits;
+    /*public Room getExit(String direction)
+    {
+        if(direction.equals("north"))
+        {
+            return northExit;
+        }
+        if(direction.equals("south"))
+        {
+            return southExit;
+        }
+        if(direction.equals("east"))
+        {
+            return eastExit;
+        }
+        if(direction.equals("west"))
+        {
+            return westExit;
+        }
+        return null;
+    }*/
+    
     /**
      * Create a room described "description". Initially, it has no exits. 
      * "description" is something like "a kitchen" or "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
+    public Room (String description) 
     {
         this.description = description;
+        exits = new HashMap<String, Room>();
     }
-
+    
     /**
      * Define the exits of this room.  Every direction either leads
      * to another room or is null (no exit there).
@@ -38,23 +57,36 @@ public class Room
      * @param south The south exit.
      * @param west The west exit.
      */
-    public void setExits(Room north, Room east, Room south, Room west) 
+    public void setExit(String direction, Room neighbor) 
     {
-        if(north != null) {
-            northExit = north;
+        exits.put(direction, neighbor);
+        /*if(north != null) {
+            exits.put("north", north);
         }
         if(east != null) {
-            eastExit = east;
+            exits.put("east", east);
         }
         if(south != null) {
-            southExit = south;
+            exits.put("south", south);
         }
         if(west != null) {
-            westExit = west;
-        }
+            exits.put("west", west);
+        }*/
     }
     
-    
+    public Room getExit(String direction)
+    {
+        return exits.get(direction);
+    }
+    public String getExitString()
+    {
+        String returnString = "Exit:";
+        for(String direction : exits.keySet())
+        {
+            returnString += " " + direction;
+        }
+        return returnString;
+    }
     
     /**
      * @return The description of the room.

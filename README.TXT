@@ -24,3 +24,12 @@ project, and how to fix them.
 
 The project 'zuul-better' contains a version of this project with better
 designed class structure. It includes the fixes discussed in the book.
+
+
+
+1)
+	a)the application is a game that allows you to move around a bit
+	b)go,help,quit
+	c) the go command followed by the dirrection allows yoiu to go to that direction
+	d)4 rooms
+9)Returns a Set view of the keys contained in this map. The set is backed by the map, so changes to the map are reflected in the set, and vice-versa. If the map is modified while an iteration over the set is in progress.
