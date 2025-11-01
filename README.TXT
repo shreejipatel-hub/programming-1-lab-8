@@ -33,3 +33,4 @@ designed class structure. It includes the fixes discussed in the book.
 	c) the go command followed by the dirrection allows yoiu to go to that direction
 	d)4 rooms
 9)Returns a Set view of the keys contained in this map. The set is backed by the map, so changes to the map are reflected in the set, and vice-versa. If the map is modified while an iteration over the set is in progress.
+13) the go command changes the player location so the only change it brings in the object diagram is that when you use it to go the next room it will now point to the new room you are in instead of the room it was pointing to before.
