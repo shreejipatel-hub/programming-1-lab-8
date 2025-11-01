@@ -78,6 +78,12 @@ public class Room
     {
         return exits.get(direction);
     }
+    
+    public String getLongDescription()
+    {
+        return "you are " + description + ".\n" + getExitString();
+    }
+    
     public String getExitString()
     {
         String returnString = "Exit:";
