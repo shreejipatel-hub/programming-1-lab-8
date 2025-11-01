@@ -117,6 +117,10 @@ public class Game
         {
             printLocationInfo();
         }
+        else if (commandWord.equals("eat"))
+        {
+            System.out.println("You have eaten now and you are not hungry any more");
+        }
 
         return wantToQuit;
     }
