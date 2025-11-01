@@ -64,4 +64,9 @@ public class Parser
             return new Command(null, word2); 
         }
     }
+    
+    public CommandWords getCommands()
+    {
+        return commands;
+    }
 }
